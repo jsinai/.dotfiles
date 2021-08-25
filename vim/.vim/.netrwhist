@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/jsinai/Downloads/Customers/Outform/Home Depot/ledlib/nest_thd_ledlib20170415/com/led/ledlib'
+let g:netrw_dirhist_2='/Volumes/JS'
+let g:netrw_dirhist_3='/Users/jsinai/.vim/bundle/nerdtree/syntax'
+let g:netrw_dirhist_4='/Users/jsinai/.vim/bundle/nerdtree'
+let g:netrw_dirhist_5='/Users/jsinai/.vim/bundle/nerdtree/nerdtree_plugin'
+let g:netrw_dirhist_6='/Volumes/NO NAME'
