@@ -57,6 +57,8 @@ set encoding=utf8
 "  set ambiwidth=double
 "endif
 
+" Start airline
+"
 " Fonts for airline / powerline
 "set guifont=DroidSansMono_Nerd_Font:h16
 "set guifont=Literation\ Mono\ Powerline:h15
@@ -65,6 +67,13 @@ set encoding=utf8
 "set guifont=Knack\ Regular\ Nerd\ Font\ Complete:h15
 " After my latest MacOS and homebrew update, my Knack font was gone. Using Meslo for now. This was installed using https://github.com/ryanoasis/nerd-fonts
 set guifont=Meslo\ LG\ S\ for\ Powerline:h15
+
+" https://github.com/vim-airline/vim-airline/wiki/FAQ#vim-airline-doesnt-appear-until-i-create-a-new-split
+set laststatus=2
+
+let g:airline_powerline_fonts = 1
+
+" End airline
 
 " Simple Bookmarks keyboard shortcuts
 " https://github.com/AndrewRadev/simple_bookmarks.vim
@@ -107,11 +116,6 @@ set expandtab
 " How to copy the path of the current file to the clipboard (mapped to F4)
 " http://stackoverflow.com/questions/916875/yank-file-name-path-of-current-buffer-in-vim?noredirect=1&lq=1
 noremap <silent> <F4> :let @+=expand("%:p")<CR>
-
-" airline
-" https://github.com/vim-airline/vim-airline/wiki/FAQ#vim-airline-doesnt-appear-until-i-create-a-new-split
-set laststatus=2
-let g:airline_powerline_fonts = 1
 
 "
 " >>> Start no_plugins
@@ -498,6 +502,7 @@ noremap <leader>bcn :%s/\(^\\|\(BCN-\d\d\d\d\)\@<=\).\{-}\($\\|BCN-\d\d\d\d\)\@=
 "
 " https://github.com/neoclide/coc.nvim/wiki/Debug-coc.nvim
 let $NVIM_COC_LOG_LEVEL = 'debug'
+let g:coc_node_path = '/Users/jsinai/.nvm/versions/node/v14.17.6/bin/node'
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -663,3 +668,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " === End of coc.nvim config
+
+" Redraw on focus. Without this, you need to type Ctrl-L to refresh.
+" https://unix.stackexchange.com/a/46828
+au FocusGained * :exe "normal \<C-l>"
+
