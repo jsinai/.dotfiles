@@ -106,3 +106,7 @@ source ~/.iterm2_shell_integration.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# To get vim to show status line colours
+# https://vi.stackexchange.com/a/7448/12867
+TERM=xterm-256color
