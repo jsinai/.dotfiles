@@ -60,13 +60,8 @@ set encoding=utf8
 " Start airline
 "
 " Fonts for airline / powerline
-"set guifont=DroidSansMono_Nerd_Font:h16
-"set guifont=Literation\ Mono\ Powerline:h15
-"set guifont=Menlo-Regular:h15
-" This works best for Macvim, but Meslo is best for iterm
-"set guifont=Knack\ Regular\ Nerd\ Font\ Complete:h15
-" After my latest MacOS and homebrew update, my Knack font was gone. Using Meslo for now. This was installed using https://github.com/ryanoasis/nerd-fonts
-set guifont=Meslo\ LG\ S\ for\ Powerline:h15
+" Using DejaVu for now. Also for iTerm2 This was installed using https://github.com/ryanoasis/nerd-fonts
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h15
 
 " https://github.com/vim-airline/vim-airline/wiki/FAQ#vim-airline-doesnt-appear-until-i-create-a-new-split
 set laststatus=2
@@ -494,8 +489,8 @@ noremap <silent> <F6> /^\(<<<<<<<\\|=======\\|>>>>>>>\)<cr>
 " noremap <silent> <leader>y :YcmCompleter GoTo<cr>
 
 " sinai: filter out anything other than BCN
-noremap <leader>bcn :%s/\(^\\|\(BCN-\d\d\d\d\)\@<=\).\{-}\($\\|BCN-\d\d\d\d\)\@=//g"
-
+" This is a macro
+noremap <leader>bcn /\(BCN-\d\{1,6}\):%s//\r\1,\r/g:g!//d:%jiid in ($r)
 
 " === Start of coc.nvim config
 " See https://github.com/neoclide/coc.nvim

@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -110,3 +112,16 @@ export NVM_DIR="$HOME/.nvm"
 # To get vim to show status line colours
 # https://vi.stackexchange.com/a/7448/12867
 TERM=xterm-256color
+
+# FZF completions
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add this to your .bashrc file, and all those "grep: <x>: Is a directory" complaints wil go away!
+export GREP_OPTIONS='--directories=skip'
+
+# python for electron-builder in bacon-builder
+#https://stackoverflow.com/a/67274521/570529
+PATH=$(pyenv root)/shims:$PATH
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

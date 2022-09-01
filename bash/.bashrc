@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && . "$HOME/.fig/shell/bashrc.pre.bash"
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -97,6 +99,7 @@ export PATH=$PATH:/usr/local/git/bin/
 #export PROMPT_COMMAND=
 export EDITOR=/Applications/MacVim/MacVim.app/Contents/MacOS/MacVim
 
+# Add this to your .bashrc file, and all those "grep: <x>: Is a directory" complaints wil go away!
 export GREP_OPTIONS='--directories=skip'
 
 # sinai: disabled on 4/17/17 to be able to set the tab title. TODO: maybe reinstate.
@@ -152,10 +155,12 @@ HISTSIZE=1000000 # Set your history file to be reasonably huge
 # Ignore duplicate commands, and commands that start with spaces
 HISTCONTROL='ignoreboth'
 
-
 # FZF https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && . "$HOME/.fig/shell/bashrc.post.bash"
