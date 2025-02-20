@@ -19,19 +19,10 @@ alias h='history'
 
 # Git
 alias gs='git status'
-alias glog='git log --decorate'
-alias gone='git log --oneline --decorate'
 alias ggraph='git log --graph --all --decorate'
 alias gbl='git branch -l'
-
-# BrightSign
-alias serial1='screen /dev/tty.usbserial-FT079JIN0 115200'
-alias serial2='screen /dev/tty.usbserial-FT079JIN1 115200'
-alias serial3='screen /dev/tty.usbserial-FT079JIN2 115200'
-alias serial4='screen /dev/tty.usbserial-FT079JIN3 115200'
-# alias screenbs='screen /dev/tty.usbserial-141420 115200'
-alias screenbs='screen /dev/tty.usbserial-* 115200'
-alias screencr='screen /dev/tty.usbserial 9600'
+alias gt="git for-each-ref --sort=-creatordate --format '%(refname) %(creatordate)' refs/tags|less"
+alias glj="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%<(12,trunc)%an%Cgreen%d %Creset%s' --date=short"
 
 # grep -- doesn't work yet
 # http://stackoverflow.com/questions/941338/shell-script-how-to-pass-command-line-arguments-to-a-unix-alias
@@ -63,31 +54,32 @@ alias vi="open \"mvim://open?url=file://$1\""
 # Prefer the built-in vim (/usr/bin/vim)
 # alias vim="open \"mvim://open?url=file://$1\""
 
-alias daliases='cd ~/.bash_aliases'
-alias dba='cd ~/git/brightauthor'
-alias dbar='cd ~/Documents/workspaces/brightauthor-projects/brightauthor\ autorun.brs'
-alias dbcc='cd ~/git/bs/bsn-cloud-configuration'
-alias dblessings='cd ~/git/bs/blessings'
-alias dbootstrap='cd ~/git/bs/bs-bootstrap'
-alias dsu='cd ~/git/bs/bs-bootstrap'
-alias dbsn='cd ~/git/bs/bsn'
-alias dcanonical='cd ~/Documents/workspaces/brightsign-general/canonical\ scripts'
-alias dcerts='cd ~/git/bs/certs/services/certs-features/src'
-alias dda='cd ~/git/bs/default-autorun'
-alias dfatback='cd ~/git/bs/fatback'
-alias dgitolite='cd ~/git/bs/gitolite-admin/'
-alias dgv='cd ~/Documents/graphviz'
-alias dnec='cd ~/git/bs/bs-nec'
-alias doa='cd ~/git/bs/oauth2'
-alias dportabella='cd ~/git/bs/portabella-repos/portabella-gitolite'
-alias dpss='cd ~/git/bs/pss/pss-server'
-alias dpvs='cd ~/git/bs/provisioning-server/server'
-alias duml='cd ~/Documents/plantuml'
-alias dws='cd ~/git/bs/websockets/websocket-server'
-
 # Instead of loading in bashrc, which takes a long time, load on demand
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";node -v'
 
 # Use exa instead of ls
+alias ls='exa'
+alias l='exa -snew'
 alias ll='exa -l -snew'
+alias la='exa -a -snew'
+alias lla='exa -a -l -snew'
+alias lrt='exa -l --sort=created'
+
+# python
+#alias python="python3"
+#
+
+# From Dave
+alias kdp='kubectl delete pod $1'
+alias kgp='kubectl get pods'
+alias klf='kubectl logs --follow $1'
+
+alias nwu='cd /Users/juliansinai/exo-github/nexgen-web-ui'
+alias nhc='cd /Users/juliansinai/exo-github/nexgen-hcs'
+alias pls='cd /Users/juliansinai/exo-github/exo-pulse'
+alias nss='cd /Users/juliansinai/exo-github/nexgen-shared-services'
+alias ni='cd /Users/juliansinai/exo-github/cloud-build-nexgen-infra'
+alias cwu='cd /Users/juliansinai/exo-github/cloud-web-ui'
+alias chc='cd /Users/juliansinai/exo-github/cloud-hcs'
+alias slc='cd /Users/juliansinai/exo-github/smart-link-client'
 

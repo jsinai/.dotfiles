@@ -286,7 +286,7 @@ autocmd FileType brs setlocal commentstring=\'\ %s
 let g:bufExplorerShowTabBuffer=1
 
 " FZF
-set rtp+=/opt/homebrew/Cellar/fzf/0.35.0/,/opt/homebrew/bin/
+set rtp+=/opt/homebrew/opt/fzf,/opt/homebrew/bin/
 
 " How can i prevent that fzf open files inside NERDtree buffer?
 " https://github.com/junegunn/fzf/issues/453
@@ -427,8 +427,6 @@ let g:bufExplorerShowTabBuffer=1
 " This command closes the quickview window before searching, otherwise you run
 " into issues
 :nmap <leader>g :ccl<CR>:exe 'cd' agdir<CR>:Ag<SPACE>
-" As above, exclude dirs
-:nmap <leader>h :ccl<CR>:exe 'cd' agdir<CR>:Ag --ignore-dir dist-player<SPACE>
 " Sinai: cd to the root directory 
 noremap <leader>cd :exe 'cd' agdir<CR>
 

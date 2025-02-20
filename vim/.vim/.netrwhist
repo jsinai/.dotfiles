@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/juliansinai'
+let g:netrw_dirhist_0='/Users/juliansinai/Temp'
 let g:netrw_dirhist_9='/Users/juliansinai/software/redux-abramov'
 let g:netrw_dirhist_8='/Users/juliansinai/Temp'
 let g:netrw_dirhist_7='/Users/juliansinai/software/redux-abramov'
@@ -8,4 +10,3 @@ let g:netrw_dirhist_5='/Users/juliansinai/.config/iterm2/AppSupport/parsers'
 let g:netrw_dirhist_4='/Users/juliansinai/.config/iterm2/AppSupport'
 let g:netrw_dirhist_3='/Users/juliansinai/.config/iterm2'
 let g:netrw_dirhist_2='/Users/juliansinai/.config'
-let g:netrw_dirhist_1='/Users/juliansinai'

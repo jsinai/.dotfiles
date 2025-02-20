@@ -75,6 +75,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   zsh-autosuggestions
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,6 +113,8 @@ source ~/.iterm2_shell_integration.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# sinai: not sure if I need this
+nvm use default
 
 # To get vim to show status line colours
 # https://vi.stackexchange.com/a/7448/12867
@@ -126,10 +129,35 @@ export GREP_OPTIONS='--directories=skip'
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# python for electron-builder in bacon-builder
+# python for exo works
 #https://stackoverflow.com/a/67274521/570529
-PATH=$(pyenv root)/shims:$PATH
+#PATH=$(pyenv root)/shims:$PATH
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 
+# Load pyenv automatically by appending
+# the following to ~/.zshrc
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# For poetry, which I installed using
+# curl -sSL https://install.python-poetry.org | python - 
+# See https://python-poetry.org/docs/#installation 
+export PATH="/Users/juliansinai/.local/bin:$PATH"
+
+# My default profile, see ~/.aws/config
+export AWS_DEFAULT_PROFILE=exo-admin-dev
+
+# Get rid of the trailing percent char, see https://unix.stackexchange.com/a/167600 
+PROMPT_EOL_MARK=
+
+# After installing postgres v16, we need to do this:
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# sinai
+# Don't share history between tabs in iterm2
+unsetopt inc_append_history
+unsetopt share_history
